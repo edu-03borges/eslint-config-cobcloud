@@ -1,0 +1,32 @@
+{
+  "env": {
+    "es2024": true, // Habilita as funcionalidades do ECMAScript 2024
+    "node": true    // Habilita variáveis e métodos globais do Node.js
+  },
+  "extends": [
+    "standard", // Usa as configurações padrão do StandardJS
+    "plugin:prettier/recommended" // Integra o Prettier ao ESLint para formatação automática de código
+  ],
+  "parser": "espree", // Indica ao ESLint qual parser ele deve usar para analisar o código JavaScript
+  "parserOptions": {
+    "ecmaVersion": "latest", // Define a versão mais recente do ECMAScript
+    "sourceType": "module" // Indica que o código é ECMAScript de módulo
+  },
+  "rules": {
+    "prettier/prettier": [ // Configurações do Prettier integradas ao ESLint
+      "error",
+      {
+        "printWidth": 100, // Largura máxima da linha
+        "tabWidth": 2, // Tamanho da tabulação
+        "singleQuote": false, // Usa aspas duplas em vez de simples
+        "trailingComma": "all", // Adiciona vírgula final em arrays e objetos literais
+        "arrowParens": "always", // Adiciona parênteses em torno dos argumentos de função de seta
+        "semi": true, // Exige ponto e vírgula no final das linhas
+        "endOfLine": "auto" // Usa a quebra de linha do sistema operacional
+      }
+    ],
+    "quotes": ["error", "double"], // Define o uso de aspas duplas
+    "semi": ["error", "always"] // Exige o uso de ponto e vírgula em todas as declarações
+  },
+  "ignorePatterns": ["node_modules"] // Ignora a análise de arquivos na pasta node_modules
+}
